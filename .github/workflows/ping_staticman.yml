@@ -1,0 +1,14 @@
+name: PingStaticman
+
+on:
+  schedule:
+    - cron:  '1,21,41 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping_staticman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping
+        run: 'wget -q -O - https://post.electbitcoin.org | grep "Hello from Staticman version 3.0.0!"'
