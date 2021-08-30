@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [sleep_check]
+    
+concurrency: 
+  group: recalculate-scores
+  cancel-in-progress: true
 
 jobs:
   sleep_check:
