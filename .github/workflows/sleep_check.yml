@@ -1,0 +1,22 @@
+name: SleepCheck
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sleep_check]
+
+jobs:
+  sleep_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sleep for 15 Minutes
+        run: sleep 15m
+        shell: bash
+      - name: Tweet Update
+        uses: mvasigh/dispatch-action@main
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          repo: ElectBitcoin-comments
+          owner: ElectBitcoin
+          event_type: tweet_update
