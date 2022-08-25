@@ -2,7 +2,7 @@ name: PingStaticman
 
 on:
   schedule:
-    - cron:  '1,21,41 * * * *'
+    - cron:  '1,11,21,31,41,51 * * * *'
   workflow_dispatch:
 
 jobs:
