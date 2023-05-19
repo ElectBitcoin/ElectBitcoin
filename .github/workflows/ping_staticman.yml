@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Ping
-        run: 'wget -q -O - https://post.electbitcoin.org | grep "Hello from Staticman version 3.0.0!"'
+        run: 'wget --timeout=10 -q -O - https://post.electbitcoin.org | grep "Hello from Staticman version 3.0.0!"'
