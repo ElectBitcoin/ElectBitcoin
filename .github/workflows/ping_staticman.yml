@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Ping
-        continue-on-error: true
-        run: 'wget --timeout=30 -q -O - https://post.electbitcoin.org | grep "Hello from Staticman version 3.0.0!"'
-        
-      - name: Ping Again
-        run: 'sleep 30 && wget --timeout=30 -q -O - https://post.electbitcoin.org | grep "Hello from Staticman version 3.0.0!"'
+        run: |
+          'wget --timeout=30 --verbose -O - https://post.electbitcoin.org > output.txt'
+          'cat output.txt'
+          'grep "Hello from Staticman version 3.0.0!" output.txt'
+          'rm output.txt'
