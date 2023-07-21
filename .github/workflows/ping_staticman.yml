@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Ping
         run: |
-          'wget --timeout=30 --verbose -O ./output.txt https://post.electbitcoin.org'
-          'cat output.txt'
-          'grep "Hello from Staticman version 3.0.0!" output.txt'
-          'rm output.txt'
+          wget --timeout=30 --verbose -O ./output.txt https://post.electbitcoin.org
+          cat output.txt
+          grep "Hello from Staticman version 3.0.0!" output.txt
+          rm output.txt
